@@ -4,15 +4,14 @@
 docker-compose up -d
 
 # Set the Docker repository based on the branch
-if [ "$GIT_BRANCH" == "origin/dev" ]; then
+if [[ $GIT_BRANCH == "origin/dev" ]]; then
     DOCKER_REPO="gopalakrishnaal/project:dev"
-elif [ "$GIT_BRANCH" == "origin/master" ]; then
+elif [[ $GIT_BRANCH == "origin/master" ]]; then
     DOCKER_REPO="gopalakrishnaal/project:prod"
 else
     echo "Unsupported branch: $BRANCH_NAME"
     exit 1
 fi
-
 # Tagging the image
 docker tag project $DOCKER_REPO
 
