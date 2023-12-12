@@ -6,16 +6,19 @@ docker-compose up -d
 # Set the Docker repository based on the branch
 if [[ $GIT_BRANCH == "origin/dev" ]]; then
     DOCKER_REPO="gopalakrishnaal/dev:project"
+    # Tagging the image
+    docker tag project $DOCKER_REPO
+    # Pushing the image to Docker Hub
+    docker push $DOCKER_REPO
 elif [[ $GIT_BRANCH == "origin/master" ]]; then
     DOCKER_REPO="gopalakrishnaal/prod:project"
+    # Tagging the image
+    docker tag project $DOCKER_REPO
+    # Pushing the image to Docker Hub
+    docker push $DOCKER_REPO
 else
     echo "Unsupported branch: $GIT_BRANCH"
 fi
-# Tagging the image
-docker tag project $DOCKER_REPO
-
-# Pushing the image to Docker Hub
-docker push $DOCKER_REPO
 
 # Check if the push was successful
 if [ $? -eq 0 ]; then
