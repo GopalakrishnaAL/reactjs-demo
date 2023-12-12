@@ -13,7 +13,7 @@ if [ $? -ne 0 ]; then
 fi
 
 # Build the Docker image
-docker build -t project:web .
+docker build -t project .
 
 # Display the list of Docker images
 docker images
