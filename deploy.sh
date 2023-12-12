@@ -9,8 +9,7 @@ if [[ $GIT_BRANCH == "origin/dev" ]]; then
 elif [[ $GIT_BRANCH == "origin/master" ]]; then
     DOCKER_REPO="gopalakrishnaal/project:prod"
 else
-    echo "Unsupported branch: $BRANCH_NAME"
-    exit 1
+    echo "Unsupported branch: $GIT_BRANCH"
 fi
 # Tagging the image
 docker tag project $DOCKER_REPO
