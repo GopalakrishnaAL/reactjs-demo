@@ -1,6 +1,12 @@
 pipeline {
     agent any
     stages {
+        stage('Checkout') {
+            steps {
+               git branch: 'master',
+               url: 'https://github.com/GopalakrishnaAL/reactjs-demo.git'
+            }
+        }
         stage('Login into DockerHub') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
@@ -10,14 +16,18 @@ pipeline {
         }
         stage('Changing the file permission') {
             steps {
-                sh 'chmod +x build.sh'
-                sh 'chmod +x deploy.sh'
+                script {
+                    sh 'chmod +x build.sh'
+                    sh 'chmod +x deploy.sh'
+                }
             }
         }
         stage('Executing the File') {
             steps {
-                sh './build.sh'
-                sh './deploy.sh'
+                script {
+                   sh './build.sh'
+                   sh './deploy.sh'
+                }   
             }
         }
     }
