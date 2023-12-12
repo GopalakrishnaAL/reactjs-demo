@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-               git branch: 'master',
+               git branch: 'dev',
                url: 'https://github.com/GopalakrishnaAL/reactjs-demo.git'
             }
         }
