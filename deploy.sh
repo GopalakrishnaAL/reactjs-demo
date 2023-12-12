@@ -4,9 +4,9 @@
 docker-compose up -d
 
 # Set the Docker repository based on the branch
-if [ "$BRANCH_NAME" == "origin/dev" ]; then
+if [ "$GIT_BRANCH" == "origin/dev" ]; then
     DOCKER_REPO="gopalakrishnaal/project:dev"
-elif [ "$BRANCH_NAME" == "origin/master" ]; then
+elif [ "$GIT_BRANCH" == "origin/master" ]; then
     DOCKER_REPO="gopalakrishnaal/project:prod"
 else
     echo "Unsupported branch: $BRANCH_NAME"
