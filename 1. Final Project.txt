@@ -1,0 +1,5 @@
+GITHUB REPO URL : https://github.com/GopalakrishnaAL/reactjs-demo.git
+
+DEPLOYED SITE URL: http://13.232.126.21/80/
+
+DOCKER IMAGE NAME : gopalakrishnaal/dev & gopalakrishnaal/prod
