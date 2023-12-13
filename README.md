@@ -1,3 +1,55 @@
+1. Clone and Deploy Application:
+Clone the ReactJS application from the specified GitHub repository using the command git clone https://github.com/rvsp/reactjs-demo.git.
+Navigate to the project directory using cd reactjs-demo.
+Install dependencies with npm install.
+Run the application locally using npm start.
+
+2. Dockerization:
+Create a Dockerfile in the project root with instructions for building the Docker image.
+Create a docker-compose.yml file to define services, ports, and dependencies for containerization.
+
+3. Bash Scripting:
+Create a build.sh script to automate the Docker image building process.
+Create a deploy.sh script to facilitate the deployment of the Docker image to the respective repositories.
+
+4. Version Control:
+Create .gitignore and .dockerignore files to exclude unnecessary files and directories from version control and Docker image build.
+
+5. Docker Hub:
+Create two repositories on Docker Hub: "dev" (public) and "prod" (private).
+Ensure proper tagging and versioning of Docker images before pushing.
+
+6. Jenkins:
+Install Jenkins on the desired server.
+Configure Jenkins, set up users, and define necessary credentials.
+Add a Jenkins job to execute the build and deployment scripts.
+Integrate Jenkins with the GitHub repository and configure automatic build triggers.
+
+7. AWS:
+Launch 12 EC2 micro instances on the AWS console.
+Configure Security Groups to allow access only from specified IP addresses.
+Ensure proper key pair management for secure access to instances.
+
+8. Monitoring:
+Set up a monitoring system, such as Prometheus, to track the health status of the application.
+Configure alerting rules within Prometheus to notify stakeholders when the application experiences issues.
+
+9. Submission:
+Include the GitHub repository URL, deployed site URL, and Docker image names in the submission.
+Upload screenshots of key components:
+Jenkins (login page, configuration settings, execute step commands).
+AWS EC2 console showing launched instances and configured Security Groups.
+Docker Hub repositories with image tags.
+The deployed site to showcase successful application deployment.
+Monitoring system status, especially highlighting alerts and health checks.
+
+
+
+
+
+
+                   ------------------------------------------------------------------------------------------------------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
